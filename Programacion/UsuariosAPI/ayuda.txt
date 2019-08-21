@@ -1,0 +1,1 @@
+ingresar empleado : {"correo":"aaa@gmail.com", "clave":"1234", "nombre":"carlos", "apellido":"gonzales", "perfil":"invitado"}

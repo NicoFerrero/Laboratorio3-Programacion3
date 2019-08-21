@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Primer Parcial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="Main.js"></script>
+</head>
+
+<body style="background-color:darkgrey">
+ <br>
+  <div class="container" style="background-color:lightblue">
+    <br>
+    <h2 style="background-color:gray;color:ghostwhite">Apellido del alumno</h2>
+    <br>
+    <h4>ABM - Perro</h4>
+    <br>
+    <div class="row responsive-utilities-test visible-on">
+
+      <table class="table table" style="width:90%">
+        <tr>
+          <td style="width:45%">
+            <table class="table table-hover" style="background-color:cornflowerblue">
+              <tr>
+                <td><label class="col-md-2 control-label">Tamaño</label></td>
+                <td><input type="text" id="tamanio" /><span id="spanTamanio" style="display:none;color: red"> *</span></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Edad</label></td>
+                <td><input type="text" id="edad" /><span id="spanEdad" style="display:none;color: red"> *</span></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Precio</label></td>
+                <td><input type="text" id="precio" /><span id="spanPrecio" style="display:none;color: red"> *</span></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Nombre</label></td>
+                <td><input type="text" id="nombre" /><span id="spanNombre" style="display:none;color: red"> *</span></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Raza</label></td>
+                <td><select id="cboRaza" style="max-width:180px;min-width:130px" >
+                    <option>Labrador</option>
+                    <option>Pointer</option>
+                    <option>Caniche</option>
+                  </select><span id="spanRaza" style="display:none;color: red"> *</span>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Foto</label></td>
+                <td><input type="file" id="foto" name="foto" ></td>
+              </tr>
+              <tr>
+                  <td colspan="2" style="text-align:center">
+                      <div style="height:100px"><img id="imgFoto" src="./BACKEND/fotos/perro_default.png" height="100px" width="300px" /></div><!-- PREVISUALIZACION -->
+                  </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="button" value="Agregar JSON" class="btn btn-success" onclick="PrimerParcial.Manejadora.AgregarPerroJSON()" />
+                  <input type="button" value="Mostrar JSON" class="btn btn-info" onclick="PrimerParcial.Manejadora.MostrarJSON()" />
+                  <input type="button" value="Agregar en BD" id="btn-agregar" class="btn btn-success" onclick="PrimerParcial.Manejadora.AgregarPerroEnBaseDeDatos()" />
+                  <input type="button" value="Verificar y Agregar en BD" class="btn btn-danger" onclick="PrimerParcial.Manejadora.VerificarExistencia()" />
+                  <input type="button" value="Mostrar BD" class="btn btn-warning" onclick="PrimerParcial.Manejadora.MostrarPerrosBaseDatos()" />
+                  <input type="button" value="Obtener perro por tamaño" class="btn btn-default" onclick="PrimerParcial.Manejadora.ObtenerPerrosPorTamanio()" />
+                  <input type="button" value="Filtrar por Raza" class="btn btn-info" onclick="PrimerParcial.Manejadora.FiltrarPerrosPorRaza()" />
+                  <input type="button" value="Cargar Razas" class="btn btn-warning" onclick="PrimerParcial.Manejadora.CargarRazasJSON()" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="checkbox" name="col-0" id="col-0" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar tamanio
+                  <input type="checkbox" name="col-1" id="col-1" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar edad
+                  <input type="checkbox" name="col-2" id="col-2" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar precio
+                  <input type="checkbox" name="col-3" id="col-3" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar nombre
+                  <input type="checkbox" name="col-4" id="col-4" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar raza
+                  <input type="checkbox" name="col-5" id="col-5" onchange="PrimerParcial.Manejadora.Toggle(id)"> Ocultar foto
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <div class="" style="background-color:lavenderblush;">
+              <div id="divTabla">
+                tabla aqu&iacute;...
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <input type="hidden" id="hdnIdModificacion"><!-- PARA MODIFICAR -->
+    <div id="divSpinner" style="display:none;position:absolute"><img id="imgSpinner" src="./BACKEND/gif-load.gif" /></div><!-- PARA EL SPINNER -->
+  </div>
+</body>
+
+</html>

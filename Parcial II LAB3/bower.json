@@ -1,0 +1,19 @@
+{
+  "name": "parcial 2",
+  "description": "segundo parcial",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrapValidator": "bootstrapValidator#^0.5.3",
+    "jquery": "^3.3.7"
+  }
+}

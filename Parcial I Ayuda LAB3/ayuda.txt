@@ -1,0 +1,2 @@
+tsc --outFile Main.js FRONTEND/Alien FRONTEND/Ente FRONTEND/Manejadora importante
+/// <reference path="./Alien.ts" />

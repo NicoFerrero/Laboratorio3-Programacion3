@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="administracion.php" method="Post" id="formulario">
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="nombre" id="nombre"></td>
+            </tr>
+            <tr>
+                <td>Apellido</td>
+                <td><input type="text" name="apellido" id="apellido"></td>
+            </tr>
+            <tr>
+                <td>DNI</td>
+                <td><input type="number" name="dni" id="dni"></td>
+            </tr>
+            <tr>
+                <td>Sexo</td>
+                <td>
+                    <select name="sexo" id="sexo">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Legajo</td>
+                <td><input type="number" name="legajo" id="legajo"></td>
+            </tr>
+            <tr>
+                <td>Sueldo</td>
+                <td><input type="number" name="sueldo" id="sueldo"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Enviar" id="enviar" onclick="Manejadora.Datos.RecuperarDatos()"></td>
+                <td><input type="reset" value="Cancelar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script src="./main1.js"></script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SUBIR ARCHIVOS -- CON AJAX --</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark text-white-50">
+  <div class="container">
+    <div id="alert" class="container-fluid mt-5 alert fade show d-none" role="alert">
+        <span id="msgAlert"></span>    
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-8 col-12">
+        <form id="miFormulario" class="p-4">
+          <div class="row">
+            <div class="col-12 text-center text-uppercase h3 mb-2">Ingrese sus datos</div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="nombre" class="col-form-label">Nombre</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="text" class="form-control" id="nombre">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="apellido" class="col-form-label">Apellido</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="text" class="form-control" id="apellido">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="legajo" class="col-form-label">Legajo</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="text" class="form-control" id="legajo">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="clave" class="col-form-label">Clave</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="password" class="form-control" id="clave">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="sueldo" class="col-form-label">Sueldo</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="text" class="form-control" id="sueldo">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-12 col-sm-2">
+              <label for="foto" class="col-form-label">Foto</label>
+            </div>
+            <div class="col-12 col-sm-10">
+              <input type="file" class="form-control-file" id="foto">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <button type="button" id="agregarBtn" class="btn btn-outline-primary btn-block mb-2"><span id="span">Crear</span><i class="ml-2 far fa-paper-plane"></i></button>
+            </div>
+            <div class="col-12 col-sm-6">
+              <button type="reset" id="cancelar" class="btn btn-outline-danger btn-block mb-2">Cancelar<i class="ml-2 fas fa-ban"></i></button>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-4 d-none d-md-block mb-5 pb-4">
+          <img id="imgFoto" src="./BACKEND/usr_default.jpg" width="230px" height="230px" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div id="tabla"></div>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" id="idEmpleado">
+  <input type="hidden" id="oldName">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/45bb931b69.js"></script>
+  <script src="ejemplo.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Tabla" onclick="Manejadora.GenerarTabla()">
+    <input type="text" name="filtrar" id="filtrar"><input type="button" value="Filtrar" onclick="Manejadora.FiltrarPorPais()">
+    <select name="" id="filtro" onchange="Manejadora.FiltrarPorCampo()">
+        <option value="">Seleccione</option>
+        <option value="tamanio">Tamaño</option>
+        <option value="color">Color</option>
+        <option value="pais">Pais</option>
+    </select>
+    <form action="administrarRemeras.php" method="GET">
+        <table>
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="id" id=""></td>
+            </tr>
+            <tr>
+                <td>slogan:</td>
+                <td><input type="text" name="slogan" id=""></td>
+            </tr>
+            <tr>
+                <td>size:</td>
+                <td><input type="text" name="size" id=""></td>
+            </tr>
+            <tr>
+                <td>price:</td>
+                <td><input type="text" name="price" id=""></td>
+            </tr>
+            <tr>
+                <td>color:</td>
+                <td><input type="text" name="color" id=""></td>
+            </tr>
+            <tr>
+                <td colspan="2">Datos Manofacturer</td>
+            </tr>
+            <tr>
+                <td>name:</td>
+                <td><input type="text" name="name" id=""></td>
+            </tr>
+            <tr>
+                <td>logo:</td>
+                <td><input type="text" name="logo" id="" value="https://robohash.org/authicperferendis.bmp?size=50x50&set=set1"></td>
+            </tr>
+            <tr>
+                <td>country:</td>
+                <td><input type="text" name="country" id=""></td>
+            </tr>
+            <tr>
+                <td>city:</td>
+                <td><input type="text" name="city" id=""></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Enviar"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="hidden" name="op" value="agregarRemera"></td>
+            </tr>
+        </table>   
+    </form>
+    <div id="tabla"></div>
+</body>
+</html>

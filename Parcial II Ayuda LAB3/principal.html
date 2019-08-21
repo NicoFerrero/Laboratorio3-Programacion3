@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./Dependecias/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Dependecias/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <script src="./Dependecias/jquery/dist/jquery.min.js"></script>
+    <script src="./Dependecias/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./Dependecias/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="./FRONTEND/registroValidation.js"></script>
+    <script src="./FRONTEND/principal.js"></script>
+    <style>
+
+        #msg{
+            padding-left: 35%;
+        }
+
+        #contenido > div:nth-child(2){
+            background-color: lightblue;
+        }
+
+        label{
+            margin-top: 5px;
+        }
+
+        .inputGroupContainer{
+            padding: 0;
+            margin-bottom: 15px;
+        }
+    </style>
+    <title>Principal</title>
+</head>
+<body>
+    <div class="container alert hidden" id="alert">
+        <span id="msg"></span>
+    </div>
+    <div class="container" id="contenido">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <p class="h2 text-uppercase">principal</p>
+            <div class="row">
+                <div class="col-sm-12" id="tabla"></div>
+
+                <div id="eliminar" class="modal fade" role="dialog" hidden>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Confirmar eliminacion</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <p id="confirmarTexto"></p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                    id="modal-btn-si" data-dismiss="modal">Si</button>
+                                <button type="button" class="btn btn-primary"
+                                    id="modal-btn-no" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modificacion" class="modal fade" role="dialog"
+                    hidden>
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modificacion</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="registroForm" class="well">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label">Nombre</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <input name="nombre" class="form-control" type="text" id="nombre" placeholder="Nombre">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label">Apellido</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <input name="apellido" class="form-control" type="text" id="apellido" placeholder="apellido">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label class="control-label">E-mail</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                    <input name="mail" class="form-control" type="text" id="mail" placeholder="E-mail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label for="perfil" class="control-label">Perfil</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                                                    <select name="perfil" id="perfil" class="form-control">
+                                                        <option value="empleado">empleado</option>
+                                                        <option value="encargado">encargado</option>
+                                                        <option value="propietario">propietario</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label for="foto" class="control-label">Foto</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                                                    <input type="file" name="foto" id="foto" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label for="password" class="control-label">Clave</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                    <input type="password" name="password" id="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-2">
+                                                <label for="confirm" class="control-label">Confirmar</label>
+                                            </div>
+                                            <div class="col-sm-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                    <input type="password" name="confirm" id="confirm" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-block btn-primary" id="btnEnviar">Enviar</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="reset" class="btn btn-block btn-warning">Limpiar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                    id="modal-btn-si" data-dismiss="modal">Realizado</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="controles" hidden>
+                    <div class="row">
+                            <label class="col-md-3">Color de Fondo</label>
+                            <select class="col-md-3" id="colorFondo">
+                                <option value="white">Blanco</option>
+                                <option value="green">Verde</option>
+                                <option value="red">Rojo</option>
+                                <option value="blue">Azul</option>
+                            </select>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3">Color de Fuente</label>
+                        <select class="col-md-3" id="colorFuente">
+                            <option value="black">Negro</option>
+                            <option value="darkgreen">Verde</option>
+                            <option value="darkred">Rojo</option>
+                            <option value="darkblue">Azul</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3">Estilo de imagen</label>
+                        <select class="col-md-3" id="marcoImagen">
+                            <option value="">Default</option>
+                            <option value="rounded">Redondeado</option>
+                            <option value="circle">Circular</option>
+                            <option value="thumbnail">Diapositiva</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-block" id="btnGuardarCambios">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <input type="hidden" name="id" id="id">
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./Dependecias/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Dependecias/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <script src="./Dependecias/jquery/dist/jquery.min.js"></script>
+    <script src="./Dependecias/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./Dependecias/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="./FRONTEND/autoValidation.js"></script>
+    <script src="./FRONTEND/principal.js"></script>
+    <style>
+
+        #msg{
+            padding-left: 35%;
+        }
+
+        #contenido > div:nth-child(2){
+            background-color: lightblue;
+        }
+
+        label{
+            margin-top: 5px;
+        }
+
+        .inputGroupContainer{
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        #tablaAutos{
+            background-color: pink;
+        }
+    </style>
+    <title>Principal</title>
+</head>
+<body>
+    <div class="container alert hidden" id="alert">
+        <span id="msg"></span>
+    </div>
+    <div class="container" id="contenido">
+        <div class="col-xs-0"></div>
+        <div class="col-xs-12">
+            <p class="h2 text-uppercase">principal</p>
+            <div class="row">
+                <div class="col-xs-6" id="tabla"></div>
+                <div class="col-xs-6" id="tablaAutos"></div>
+
+                <div id="eliminarAuto" class="modal fade" role="dialog" hidden>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Confirmar eliminacion</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <p id="confirmarTextoAuto"></p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                    id="modal-btn-si-Auto" data-dismiss="modal">Si</button>
+                                <button type="button" class="btn btn-primary"
+                                    id="modal-btn-no- Auto" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modificacionAuto" class="modal fade" role="dialog"
+                    hidden>
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close"
+                                    data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modificacion</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="autoForm" class="well">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-2">
+                                                <label class="control-label">ID</label>
+                                            </div>
+                                            <div class="col-xs-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <input name="id" class="form-control" type="text" id="id" placeholder="id" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-2">
+                                                <label class="control-label">Marca</label>
+                                            </div>
+                                            <div class="col-xs-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <input name="marca" class="form-control" type="text" id="marca" placeholder="Marca">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-2">
+                                                <label class="control-label">Color</label>
+                                            </div>
+                                            <div class="col-xs-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                    <input name="color" class="form-control" type="text" id="color" placeholder="Color">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-2">
+                                                <label class="control-label">Precio</label>
+                                            </div>
+                                            <div class="col-xs-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                    <input name="precio" class="form-control" type="text" id="precio" placeholder="Precio">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-2">
+                                                <label for="modelo" class="control-label">Modelo</label>
+                                            </div>
+                                            <div class="col-xs-10 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                                                    <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button type="submit" class="btn btn-block btn-primary" id="btnEnviar">Enviar</button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="reset" class="btn btn-block btn-warning">Limpiar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                    id="modal-btn-si" data-dismiss="modal">Realizado</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-0"></div>
+    </div>
+    <input type="hidden" name="id" id="id">
+</body>
+</html>

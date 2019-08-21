@@ -1,0 +1,12 @@
+{
+  "name": "EjerClase09",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
+  "dependencies": {
+    "bootstrapValidator": "bootstrapValidator#^0.5.3"
+  }
+}

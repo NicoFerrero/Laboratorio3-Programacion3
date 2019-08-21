@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./Dependecias/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Dependecias/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <script src="./Dependecias/jquery/dist/jquery.min.js"></script>
+    <script src="./Dependecias/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./Dependecias/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="./FRONTEND/loginValidation.js"></script>
+    <script src="./FRONTEND/login.js"></script>
+    <style>
+
+        body{
+            background-color: bisque;
+        }
+
+        #content{
+            position: absolute;
+            height: 100vh;
+        }
+
+        #content > div:nth-child(2){
+            background-color: palevioletred;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            margin: 0;
+        }
+
+        label{
+            margin-top: 5px;
+        }
+
+        button#btnRegistrar{
+            margin-bottom: 7px;
+        }
+
+        .inputGroupContainer{
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        #msg{
+            padding-left: 35%;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container alert hidden" id="alert">
+        <span id="msg"></span>
+    </div>
+    <div class="container" id="content">
+        <div class="col-md-2 col-sm-3 col-xs-4"></div>
+        <div class="col-md-8  col-sm-6 col-xs-4">
+            <p class="h2 text-uppercase">login</p>
+            <form id="loginForm" class="well">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-2  col-xs-12">
+                            <label for="mail" class="control-label">E-mail</label>
+                        </div>
+                        <div class="col-md-10  col-xs-12 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="email" name="mail" id="mail" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-2 col-xs-12 text-justify">
+                            <label for="password" class="control-label">Clave</label>
+                        </div>
+                        <div class="col-md-10 col-xs-12 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <button type="submit" class="btn btn-block btn-primary" id="btnEnviar">Enviar</button>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <button type="reset" class="btn btn-block btn-warning">Limpiar</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-block btn-success" id="btnRegistrar">Quiero Registrarme!</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2  col-sm-3 col-xs-4"></div>
+    </div>
+</body>
+</html>

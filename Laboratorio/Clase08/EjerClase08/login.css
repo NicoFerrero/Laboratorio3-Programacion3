@@ -1,0 +1,36 @@
+th{
+    background-color: navy;
+    color: beige;
+    font-size: 20pt;
+}
+
+span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table{
+    background-color: darkgreen;
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
+
+input[type="text"]{
+    width: 99%;
+    font-size: 150%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type="button"]{
+    width: 100%;
+}
+
+.aceptar{
+    background-color: forestgreen;
+    color: blanchedalmond;
+}
+
+.cancelar{
+    background-color: red;
+    color: blanchedalmond;
+}

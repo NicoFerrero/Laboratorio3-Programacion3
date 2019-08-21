@@ -1,0 +1,8 @@
+delete y PUT hacerlo con x-www-urlencoded
+
+
+media: {"color":"verde","marca":"puma","precio":5.36,"talle":"frande"}
+
+usuario: {"correo":"ccc@gmail.com","clave":"9632","nombre":"carlos","apellido":"gomez","perfil":"empleado"} + foto
+
+no olvidar pasar token cuando corresponda
